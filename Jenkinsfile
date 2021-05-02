@@ -1,5 +1,4 @@
-pipeline{
-    agent any
+node( ){
     stage ('Chekout'){
       https://github.com/Kiran-29/Website.git
     }
