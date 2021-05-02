@@ -4,9 +4,9 @@ pipeline {
   stage ('Check out'){
   steps {
           https://github.com/Kiran-29/Website.git
-         }
-     }
- }
+                }
+  }
+            
    stage('Build') {
    steps {
           withMaven(maven : 'Maven') {
