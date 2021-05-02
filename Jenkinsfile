@@ -1,21 +1,12 @@
-pipeline {
+pipeline{
     agent any
-    stages {
-stage('Checkout') {
-steps {
-    git 'https://github.com/Kiran-29/Website.git'
+    stage ('Chekout'){
+        https://github.com/Kiran-29/Website.git
+            }
+    stage ('Build'){
+        echo build the website
+    }
+    stage ('Deploy'){
+        sh 'cd /var/www/html sudo cp /var/lib/jenkins/workspace/kiran_29/* .'
     }
 }
-    stage('build') {
-    steps {
-        build
-    }
-    }
-}
-    stage('deploy') {
-steps {
-    bat 'cd /var/www/html sudo cp /var/lib/jenkins/workspace/kiran_29/* .'
-    }
-}
-}
-
