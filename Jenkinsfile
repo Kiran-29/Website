@@ -1,8 +1,8 @@
 pipeline{
     agent any
     stage ('Chekout'){
-        https://github.com/Kiran-29/Website.git
-            }
+      https://github.com/Kiran-29/Website.git
+    }
     stage ('Build'){
         echo build the website
     }
