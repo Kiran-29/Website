@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-stage('scm') {
+stage('Checkout') {
 steps {
     git 'https://github.com/Kiran-29/Website.git'
     }
@@ -18,4 +18,4 @@ steps {
     }
 }
 }
-}
+
