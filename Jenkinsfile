@@ -1,22 +1,22 @@
 pipeline {
-      agent any
-      stages {
-  stage ('Check out'){
-  steps {
-          https://github.com/Kiran-29/Website.git
-                }
-  }
-            
-   stage('Build') {
-   steps {
-          withMaven(maven : 'Maven') {
-          bat "mvn clean install"
-         }
+    agent any
+    stages {
+stage('scm') {
+steps {
+    git 'https://github.com/Kiran-29/Website.git'
     }
 }
-  stage ('Deploy'){
-  steps {
-         sh 'cd /var/www/html sudo cp /var/lib/jenkins/workspace/kiran-29/* .'
-       }
-  }
+    stage('build') {
+    steps {
+        withMaven(maven : 'mymaven'){
+        bat "mvn clean install"
+    }
+    }
+}
+    stage('deploy') {
+steps {
+    bat 'cd /var/www/html sudo cp /var/lib/jenkins/workspace/kiran_29/* .'
+    }
+}
+}
 }
